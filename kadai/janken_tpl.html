@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+ <div class="janken"><ul>
+   <li id="gu_btn">グー</li>
+   <li id="cho_btn">チョキ</li>
+   <li id="par_btn">パー</li>
+   </ul>
+ </div> 
+  
+  <div>コンピュータの出した手は？<span id="cphands"></span></div>
+  <div id="judgment"></div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+$(document).ready(function(){
+
+  $("#gu_btn").on("click", function(){
+    let pgu = 1;
+    let cp = Math.ceil(Math.random()*3);
+
+    if (cp== 1 ) {
+      $("#cphands").text("グー")
+      $("#judgment").text("あいこ")
+    } else if(cp== 2 ){
+      $("#cphands").text("チョキ")
+      $("#judgment").text("勝ち")
+    } else if(cp== 3 ){
+      $("#cphands").text("パー")
+      $("#judgment").text("負け")
+  }});
+
+  $("#cho_btn").on("click", function(){
+    let pgu = 2;
+    let cp = Math.ceil(Math.random()*3);
+
+    if (cp== 1 ) {
+      $("#cphands").text("グー")
+      $("#judgment").text("負け")
+    } else if(cp== 2 ){
+      $("#cphands").text("チョキ")
+      $("#judgment").text("あいこ")
+    } else if(cp== 3 ){
+      $("#cphands").text("パー")
+      $("#judgment").text("勝ち")
+  }});
+
+  $("#par_btn").on("click", function(){
+    let pgu = 3;
+    let cp = Math.ceil(Math.random()*3);
+
+    if (cp== 1 ) {
+      $("#cphands").text("グー")
+      $("#judgment").text("勝ち")
+    } else if(cp== 2 ){
+      $("#cphands").text("チョキ")
+      $("#judgment").text("負け")
+    } else if(cp== 3 ){
+      $("#cphands").text("パー")
+      $("#judgment").text("あいこ")
+  }});
+
+});
+</script>
+</body>
+</html>
